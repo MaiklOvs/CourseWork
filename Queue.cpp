@@ -15,7 +15,7 @@ Queue::~Queue()
 {
 	Clear();
 }
-void Queue::push(std::string data)
+void Queue::AddTask(std::string data)
 {
 	if (head == nullptr)  //Проверка, создан ли первый элемент
 	{
@@ -53,7 +53,7 @@ void Queue::PrintTasks()
 /// <summary>
 /// Исключение первого элемента
 /// </summary>
-void Queue::pop()
+void Queue::DeleteTask()
 {
 	if (size > 0) {
 		Node* temp = head; // Временная переменная 
@@ -70,6 +70,6 @@ void Queue::Clear()
 {
 	while (size)
 	{
-		pop();
+		DeleteTask();
 	}
 }

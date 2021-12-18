@@ -52,7 +52,7 @@ void app(Scheduler &scheduler)
 					case (Start): {
 						for (auto i = 0; i < rand() % 5 ; i++)
 						{
-							scheduler.tasks.push((GetRandomTask(a)));
+							scheduler.tasks.AddTask((GetRandomTask(a)));
 						}
 
 						std::cout << "\t" << "Задачи успешно сгенерированы" << std::endl;
@@ -72,7 +72,7 @@ void app(Scheduler &scheduler)
 						break;
 					}
 					case (CompleteTask): {
-						scheduler.tasks.pop();
+						scheduler.tasks.DeleteTask();
 						scheduler.tasks.PrintTasks();
 						break;
 					}
