@@ -36,7 +36,7 @@ void Queue::push(std::string data)
 /// Распечатка задач на консоль
 /// </summary>
 /// <param name="a"></param>
-void Queue::PrintQueue()
+void Queue::PrintTasks()
 {
 	if (size != 0) {
 		Node* current = head; // Временная переменная для поиска последнего элемента

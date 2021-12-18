@@ -11,7 +11,7 @@ public:
 	~Queue(); //Деструктор
 	void push(std::string data); // Добавление элемента в очередь
 	int GetSize() { return size; } //Получение количества элементов
-	void PrintQueue(); //Распечатка задач очереди
+	void PrintTasks(); //Распечатка задач очереди
 	void pop(); // Удаление элемента
 	void Clear();//Очистка очереди
 private:

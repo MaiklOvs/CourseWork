@@ -3,75 +3,94 @@
 #include <vector>
 #include "Queue.h"
 #include "GetRandomTask.h"
-
-/*class Scheduler
+enum Actions
 {
+	Stop = 1,
+	Start,
+	PrintTasks,
+	PrintCountTasks,
+	CompleteTask,
+	Clear
+};
+/// <summary>
+/// Планировщик
+/// </summary>
+class Scheduler
+{
+public:
 	Queue tasks;
 };
-*/
-
-int main() {
-	setlocale(LC_ALL, "Russian");
-	Queue queue;
+/// <summary>
+/// Функция программы иллюстратор
+/// </summary>
+/// <param name="scheduler"></param>
+void app(Scheduler &scheduler)
+{
+	Actions action = Stop;
+	int n = action;
 	std::vector<std::string> a =
-	{
+		{
 	"Запустить гугл",
 	"Запустить Steam",
 	"Запустить Dota 2",
 	"Свернуть окно",
 	"Развернуть окно",
 	};
-	int n;
 	do
 	{
-		std::cout << "0 - Завершить программу" << std::endl << "1 - Запустить планировщик задач"
-		<< std::endl << "2 - Распечатать задачи" << std::endl << "3 - Распечатать количество задач"
-		<< std::endl << "4 - Выполнить первую задачу" << std::endl << "5 - очистка задач" << std::endl;
-		std::cin >> n;
-		switch (n)
-		{
-		case 0: {
-			std::cout << "Задачи очищены, программа завершена успешно";
-			break;
-		}
-		case 1: {
-			for (auto i = 0; i < rand() % 5 ; i++)
-			{
-				queue.push(GetRandomTask(a));
-			}
+			std::cout << "Завершить программу - 1" << std::endl << "Запустить планировщик задач - 2"
+			<< std::endl << "Распечатать задачи - 3" << std::endl << "Распечатать количество задач - 4"
+			<< std::endl << "Выполнить первую задачу - 5" << std::endl << "Очистка задач - 6" << std::endl;
+			std::cin >> n;
+			switch (n)
+					{
+					case (Stop): {
+						std::cout << "Задачи очищены, программа завершена успешно"<<std::endl;
+						return;
+						
+					}
+					case (Start): {
+						for (auto i = 0; i < rand() % 5 ; i++)
+						{
+							scheduler.tasks.push((GetRandomTask(a)));
+						}
 
-			std::cout << "\t" << "Задачи успешно сгенерированы" << std::endl;
-			break;
-		}
-		case 2: {
-			/*PrintTasksQueue();
-			{
+						std::cout << "\t" << "Задачи успешно сгенерированы" << std::endl;
+						break;
+					}
+					case (PrintTasks): {
+						/*PrintTasksQueue();
+						{
 
-			}
-			*/
-			queue.PrintQueue();
-			break;
-		}
-		case 3: {
-			std::cout << "\t" << "Количество задач = " << "\t" << queue.GetSize() << std::endl;
-			break;
-		}
-		case 4: {
-			queue.pop();
-			queue.PrintQueue();
-			break;
-		}
-		case 5: {
-			queue.Clear();
-			std::cout << "\t" << "Очистка задач" << std::endl << "\t"
-				<< "Количество задач = " << queue.GetSize() << std::endl;
-			break;
-		}
-		default: std::cout << "\t" << "Неизвестная команда" << std::endl;
-			break;
-		}
+						}
+						*/
+						scheduler.tasks.PrintTasks();
+						break;
+					}
+					case (PrintCountTasks): {
+						std::cout << "\t" << "Количество задач = "<< scheduler.tasks.GetSize() << std::endl;
+						break;
+					}
+					case (CompleteTask): {
+						scheduler.tasks.pop();
+						scheduler.tasks.PrintTasks();
+						break;
+					}
+					case (Clear): {
+						scheduler.tasks.Clear();
+						std::cout << "\t" << "Очистка задач" << std::endl << "\t"
+							<< "Количество задач = " << scheduler.tasks.GetSize() << std::endl;
+						break;
+					}
+					default: std::cout << "\t" << "Неизвестная команда" << std::endl;
+						break;
+					}
+	} while (n != 1);
+}
 
-	} while (n != 0);
-
+int main() {
+	setlocale(LC_ALL, "Russian");
+	Scheduler scheduler;
+	app(scheduler);
 	return 0;
 }
