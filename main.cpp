@@ -59,11 +59,7 @@ void app(Scheduler &scheduler)
 						break;
 					}
 					case (PrintTasks): {
-						/*PrintTasksQueue();
-						{
 
-						}
-						*/
 						scheduler.tasks.PrintTasks();
 						break;
 					}
