@@ -13,6 +13,7 @@ public:
 	int GetSize() { return size; } //Получение количества элементов
 	void PrintTasks(); //Распечатка задач очереди
 	void DeleteTask(); // Удаление элемента
+	bool Empty(); //Проверка на пустоту
 	void Clear();//Очистка очереди
 private:
 	/// <summary>

@@ -64,6 +64,21 @@ void Queue::DeleteTask()
 	}
 }
 /// <summary>
+/// Проверка на пустоту
+/// </summary>
+/// <returns></returns>
+bool Queue::Empty()
+{	
+	if (size == 0)
+	{
+		return true;
+	}
+	
+		return false;
+	
+	
+}
+/// <summary>
 /// Очистка очереди
 /// </summary>
 void Queue::Clear()

@@ -59,15 +59,23 @@ void app(Scheduler &scheduler)
 						break;
 					}
 					case (PrintTasks): {
-
+						if (scheduler.tasks.Empty())
+						{
+							std::cout <<"\t" << "В данных момент задач нет" << std::endl;
+						}
 						scheduler.tasks.PrintTasks();
 						break;
 					}
 					case (PrintCountTasks): {
+						
 						std::cout << "\t" << "Количество задач = "<< scheduler.tasks.GetSize() << std::endl;
 						break;
 					}
 					case (CompleteTask): {
+						if (scheduler.tasks.Empty())
+						{
+							std::cout << "\t" << "В данных момент задач нет" << std::endl;
+						}
 						scheduler.tasks.DeleteTask();
 						scheduler.tasks.PrintTasks();
 						break;
