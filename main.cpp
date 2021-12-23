@@ -24,7 +24,7 @@ public:
 /// Функция программы иллюстратор
 /// </summary>
 /// <param name="scheduler"></param>
-void app(Scheduler &scheduler)
+void App(Scheduler &scheduler)
 {
 	Actions action = Stop;
 	int n = action;
@@ -95,6 +95,6 @@ void app(Scheduler &scheduler)
 int main() {
 	setlocale(LC_ALL, "Russian");
 	Scheduler scheduler;
-	app(scheduler);
+	App(scheduler);
 	return 0;
 }
