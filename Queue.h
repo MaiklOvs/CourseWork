@@ -9,12 +9,12 @@ class Queue
 public:
 	Queue();  //Конструктор
 	~Queue(); //Деструктор
-	void AddTask(std::string data); // Добавление элемента в очередь
+	void Add(std::string data); // Добавление элемента в очередь
 	int GetSize() { return size; } //Получение количества элементов
-	void PrintTasks(); //Распечатка задач очереди
-	void DeleteTask(); // Удаление элемента
+	void print(); //Распечатка задач очереди
+	void Delete(); // Удаление элемента
 	bool Empty(); //Проверка на пустоту
-	void Clear();//Очистка очереди
+	void clear();//Очистка очереди
 private:
 	/// <summary>
 	/// Узел списка

@@ -13,11 +13,16 @@ Queue::Queue()
 /// </summary>
 Queue::~Queue()
 {
-	Clear();
+	clear();
 }
-void Queue::AddTask(std::string data)
+
+/// <summary>
+/// Добавление элемента
+/// </summary>
+/// <param name="data"></param>
+void Queue::Add(std::string data)
 {
-	if (head == nullptr)  //Проверка, создан ли первый элемент
+	if (Empty())  //Проверка, создан ли первый элемент
 	{
 		head = new Node(data); // Создание первого элемента, в случае его отсутствия
 		last = head;
@@ -36,9 +41,9 @@ void Queue::AddTask(std::string data)
 /// Распечатка задач на консоль
 /// </summary>
 /// <param name="a"></param>
-void Queue::PrintTasks()
+void Queue::print()
 {
-	if (size != 0) {
+	if (Empty() == false) {
 		Node* current = head; // Временная переменная для поиска последнего элемента
 		for (auto i = 0; i < GetSize(); i++)
 		{
@@ -53,9 +58,9 @@ void Queue::PrintTasks()
 /// <summary>
 /// Исключение первого элемента
 /// </summary>
-void Queue::DeleteTask()
+void Queue::Delete()
 {
-	if (size > 0) {
+	if (Empty() == false) {
 		Node* temp = head; // Временная переменная 
 		head = head->next; // Переход к следующему элементу
 		delete temp; // Удаление
@@ -69,22 +74,15 @@ void Queue::DeleteTask()
 /// <returns></returns>
 bool Queue::Empty()
 {	
-	if (size == 0)
-	{
-		return true;
-	}
-	
-		return false;
-	
-	
+	return size == 0;
 }
 /// <summary>
 /// Очистка очереди
 /// </summary>
-void Queue::Clear()
+void Queue::clear()
 {
-	while (size)
+	while (Empty() == false)
 	{
-		DeleteTask();
+		Delete();
 	}
 }
