@@ -13,7 +13,7 @@ Queue::Queue()
 /// </summary>
 Queue::~Queue()
 {
-	clear();
+	Clear();
 }
 
 /// <summary>
@@ -79,10 +79,11 @@ bool Queue::Empty()
 /// <summary>
 /// Очистка очереди
 /// </summary>
-void Queue::clear()
+void Queue::Clear()
 {
 	while (Empty() == false)
 	{
 		Delete();
 	}
 }
+
