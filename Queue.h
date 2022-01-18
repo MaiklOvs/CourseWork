@@ -14,7 +14,7 @@ public:
 	void print(); //Распечатка задач очереди
 	void Delete(); // Удаление элемента
 	bool Empty(); //Проверка на пустоту
-	void clear();//Очистка очереди
+	void Clear();//Очистка очереди
 private:
 	/// <summary>
 	/// Узел списка
