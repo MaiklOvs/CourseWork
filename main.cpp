@@ -49,6 +49,7 @@ void Print(Scheduler& scheduler)
 	if (scheduler.tasks.Empty())
 	{
 		std::cout << "\t" << "В данных момент задач нет" << std::endl;
+		return;
 	}
 	scheduler.tasks.print();
 }
@@ -64,7 +65,8 @@ bool CompleteTask(Scheduler& scheduler)
 		std::cout << "\t" << "В данных момент задач нет" << std::endl;
 		
 	}
-	else {
+	else 
+	{
 	scheduler.tasks.Delete();
 	scheduler.tasks.print();
 	return true;
