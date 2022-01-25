@@ -1,6 +1,6 @@
 #include "Queue.h"
 /// <summary>
-/// Конструктор
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 /// </summary>
 Queue::Queue()
 {
@@ -9,7 +9,7 @@ Queue::Queue()
 	last = nullptr;
 }
 /// <summary>
-/// Деструктор
+/// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 /// </summary>
 Queue::~Queue()
 {
@@ -17,19 +17,19 @@ Queue::~Queue()
 }
 
 /// <summary>
-/// Добавление элемента
+/// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 /// </summary>
 /// <param name="data"></param>
 void Queue::Add(std::string data)
 {
-	if (Empty())  //Проверка, создан ли первый элемент
+	if (Empty())  //РџСЂРѕРІРµСЂРєР°, СЃРѕР·РґР°РЅ Р»Рё РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚
 	{
-		head = new Node(data); // Создание первого элемента, в случае его отсутствия
+		head = new Node(data); // РЎРѕР·РґР°РЅРёРµ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°, РІ СЃР»СѓС‡Р°Рµ РµРіРѕ РѕС‚СЃСѓС‚СЃС‚РІРёСЏ
 		last = head;
 	}
 	else
 	{
-		last->next = new Node(data); // Создание нового элемента 
+		last->next = new Node(data); // РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° 
 		last = last->next;
 	}
 
@@ -38,17 +38,17 @@ void Queue::Add(std::string data)
 
 }
 /// <summary>
-/// Распечатка задач на консоль
+/// Р Р°СЃРїРµС‡Р°С‚РєР° Р·Р°РґР°С‡ РЅР° РєРѕРЅСЃРѕР»СЊ
 /// </summary>
 /// <param name="a"></param>
 void Queue::print()
 {
 	if (Empty() == false) {
-		Node* current = head; // Временная переменная для поиска последнего элемента
+		Node* current = head; // Р’СЂРµРјРµРЅРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїРѕРёСЃРєР° РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
 		for (auto i = 0; i < GetSize(); i++)
 		{
-			std::cout << "\t" << current->data << std::endl; //Вывод информации из поля Data
-			current = current->next; // Переход к следующему элементу очереди
+			std::cout << "\t" << current->data << std::endl; //Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё РёР· РїРѕР»СЏ Data
+			current = current->next; // РџРµСЂРµС…РѕРґ Рє СЃР»РµРґСѓСЋС‰РµРјСѓ СЌР»РµРјРµРЅС‚Сѓ РѕС‡РµСЂРµРґРё
 		}
 	}
 
@@ -56,20 +56,20 @@ void Queue::print()
 
 }
 /// <summary>
-/// Исключение первого элемента
+/// РСЃРєР»СЋС‡РµРЅРёРµ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 /// </summary>
 void Queue::Delete()
 {
 	if (Empty() == false) {
-		Node* temp = head; // Временная переменная 
-		head = head->next; // Переход к следующему элементу
-		delete temp; // Удаление
+		Node* temp = head; // Р’СЂРµРјРµРЅРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ 
+		head = head->next; // РџРµСЂРµС…РѕРґ Рє СЃР»РµРґСѓСЋС‰РµРјСѓ СЌР»РµРјРµРЅС‚Сѓ
+		delete temp; // РЈРґР°Р»РµРЅРёРµ
 		size--;
 
 	}
 }
 /// <summary>
-/// Проверка на пустоту
+/// РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
 /// </summary>
 /// <returns></returns>
 bool Queue::Empty()
@@ -77,7 +77,7 @@ bool Queue::Empty()
 	return size == 0;
 }
 /// <summary>
-/// Очистка очереди
+/// РћС‡РёСЃС‚РєР° РѕС‡РµСЂРµРґРё
 /// </summary>
 void Queue::Clear()
 {

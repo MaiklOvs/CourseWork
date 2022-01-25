@@ -16,7 +16,7 @@ enum Actions
 };
 
 /// <summary>
-/// Планировщик
+/// РџР»Р°РЅРёСЂРѕРІС‰РёРє
 /// </summary>
 class Scheduler
 {
@@ -25,7 +25,7 @@ public:
 };
 
 /// <summary>
-/// Старт
+/// РЎС‚Р°СЂС‚
 /// </summary>
 /// <param name="scheduler"></param>
 /// <param name="a"></param>
@@ -36,33 +36,33 @@ void Start(Scheduler& scheduler, std::vector <std::string>& a)
 		scheduler.tasks.Add((GetRandomTask(a)));
 	}
 	
-	std::cout << "\t" << "Задачи успешно сгенерированы" << std::endl;
+	std::cout << "\t" << "Р—Р°РґР°С‡Рё СѓСЃРїРµС€РЅРѕ СЃРіРµРЅРµСЂРёСЂРѕРІР°РЅС‹" << std::endl;
 	
 }
 
 /// <summary>
-/// Распечатка
+/// Р Р°СЃРїРµС‡Р°С‚РєР°
 /// </summary>
 /// <param name="scheduler"></param>
 void Print(Scheduler& scheduler)
 {
 	if (scheduler.tasks.Empty())
 	{
-		std::cout << "\t" << "В данных момент задач нет" << std::endl;
+		std::cout << "\t" << "Р’ РґР°РЅРЅС‹С… РјРѕРјРµРЅС‚ Р·Р°РґР°С‡ РЅРµС‚" << std::endl;
 		return;
 	}
 	scheduler.tasks.print();
 }
 
 /// <summary>
-/// Завершение задачи
+/// Р—Р°РІРµСЂС€РµРЅРёРµ Р·Р°РґР°С‡Рё
 /// </summary>
 /// <param name="scheduler"></param>
 bool CompleteTask(Scheduler& scheduler)
 {
 	if (scheduler.tasks.Empty())
 	{
-		std::cout << "\t" << "В данных момент задач нет" << std::endl;
+		std::cout << "\t" << "Р’ РґР°РЅРЅС‹С… РјРѕРјРµРЅС‚ Р·Р°РґР°С‡ РЅРµС‚" << std::endl;
 		
 	}
 	else 
@@ -74,28 +74,28 @@ bool CompleteTask(Scheduler& scheduler)
 }
 
 /// <summary>
-/// Очистка
+/// РћС‡РёСЃС‚РєР°
 /// </summary>
 /// <param name="scheduler"></param>
 void Clear(Scheduler& scheduler)
 {
 	scheduler.tasks.Clear();
-	std::cout << "\t" << "Очистка задач" << std::endl << "\t"
-		<< "Количество задач = " << scheduler.tasks.GetSize() << std::endl;
+	std::cout << "\t" << "РћС‡РёСЃС‚РєР° Р·Р°РґР°С‡" << std::endl << "\t"
+		<< "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°С‡ = " << scheduler.tasks.GetSize() << std::endl;
 }
 
 /// <summary>
-/// Предлагаемые действия
+/// РџСЂРµРґР»Р°РіР°РµРјС‹Рµ РґРµР№СЃС‚РІРёСЏ
 /// </summary>
 void WelcomActions()
 {
-		std::cout << "Завершить программу - 1" << std::endl << "Запустить планировщик задач - 2"
-		<< std::endl << "Распечатать задачи - 3" << std::endl << "Распечатать количество задач - 4"
-		<< std::endl << "Выполнить первую задачу - 5" << std::endl << "Очистка задач - 6" << std::endl;
+		std::cout << "Р—Р°РІРµСЂС€РёС‚СЊ РїСЂРѕРіСЂР°РјРјСѓ - 1" << std::endl << "Р—Р°РїСѓСЃС‚РёС‚СЊ РїР»Р°РЅРёСЂРѕРІС‰РёРє Р·Р°РґР°С‡ - 2"
+		<< std::endl << "Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ Р·Р°РґР°С‡Рё - 3" << std::endl << "Р Р°СЃРїРµС‡Р°С‚Р°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°С‡ - 4"
+		<< std::endl << "Р’С‹РїРѕР»РЅРёС‚СЊ РїРµСЂРІСѓСЋ Р·Р°РґР°С‡Сѓ - 5" << std::endl << "РћС‡РёСЃС‚РєР° Р·Р°РґР°С‡ - 6" << std::endl;
 }
 
 /// <summary>
-/// Функция программы иллюстратор
+/// Р¤СѓРЅРєС†РёСЏ РїСЂРѕРіСЂР°РјРјС‹ РёР»Р»СЋСЃС‚СЂР°С‚РѕСЂ
 /// </summary>
 /// <param name="scheduler"></param>
 void App(Scheduler& scheduler)
@@ -104,13 +104,13 @@ void App(Scheduler& scheduler)
 	int n = action;
 	std::vector<std::string> a =
 	{
-	"Запустить гугл",
-	"Запустить Steam",
-	"Запустить Dota 2",
-	"Свернуть окно",
-	"Развернуть окно",
-	"Включить спотифай",
-	"Выключить спотифай"
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ РіСѓРіР»",
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ Steam",
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ Dota 2",
+	"РЎРІРµСЂРЅСѓС‚СЊ РѕРєРЅРѕ",
+	"Р Р°Р·РІРµСЂРЅСѓС‚СЊ РѕРєРЅРѕ",
+	"Р’РєР»СЋС‡РёС‚СЊ СЃРїРѕС‚РёС„Р°Р№",
+	"Р’С‹РєР»СЋС‡РёС‚СЊ СЃРїРѕС‚РёС„Р°Р№"
 	};
 	do
 		{
@@ -120,7 +120,7 @@ void App(Scheduler& scheduler)
 			{
 			case (stop): {
 				Clear(scheduler);
-				std::cout << "Задачи очищены, программа завершена успешно" << std::endl;
+				std::cout << "Р—Р°РґР°С‡Рё РѕС‡РёС‰РµРЅС‹, РїСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР° СѓСЃРїРµС€РЅРѕ" << std::endl;
 				return;
 			}
 			case (start): {
@@ -132,7 +132,7 @@ void App(Scheduler& scheduler)
 				break;
 			}
 			case (printCountTasks): {
-				std::cout << "\t" << "Количество задач = " << scheduler.tasks.GetSize() << std::endl;
+				std::cout << "\t" << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РґР°С‡ = " << scheduler.tasks.GetSize() << std::endl;
 				break;
 			}
 			case (completeTask): {
@@ -143,7 +143,7 @@ void App(Scheduler& scheduler)
 				Clear(scheduler);
 				break;
 			}
-			default: std::cout << "\t" << "Неизвестная команда" << std::endl;
+			default: std::cout << "\t" << "РќРµРёР·РІРµСЃС‚РЅР°СЏ РєРѕРјР°РЅРґР°" << std::endl;
 				break;
 			}
 		} while (n != 1);
@@ -152,7 +152,7 @@ void App(Scheduler& scheduler)
 }
 
 /// <summary>
-/// Тестирование функции Clear
+/// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё Clear
 /// </summary>
 
 bool TestSchedulerClear(Scheduler& scheduler)
@@ -172,7 +172,7 @@ bool TestSchedulerClear(Scheduler& scheduler)
 }
 
 /// <summary>
-/// Тестрирование функции Start
+/// РўРµСЃС‚СЂРёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё Start
 /// </summary>
 /// <param name="scheduler"></param>
 /// <param name="a"></param>
@@ -181,13 +181,13 @@ bool TestSchedulerStart(Scheduler& scheduler)
 {
 	std::vector<std::string> a =
 	{
-	"Запустить гугл",
-	"Запустить Steam",
-	"Запустить Dota 2",
-	"Свернуть окно",
-	"Развернуть окно",
-	"Включить спотифай",
-	"Выключить спотифай"
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ РіСѓРіР»",
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ Steam",
+	"Р—Р°РїСѓСЃС‚РёС‚СЊ Dota 2",
+	"РЎРІРµСЂРЅСѓС‚СЊ РѕРєРЅРѕ",
+	"Р Р°Р·РІРµСЂРЅСѓС‚СЊ РѕРєРЅРѕ",
+	"Р’РєР»СЋС‡РёС‚СЊ СЃРїРѕС‚РёС„Р°Р№",
+	"Р’С‹РєР»СЋС‡РёС‚СЊ СЃРїРѕС‚РёС„Р°Р№"
 	};
   Start(scheduler,a);
   Print(scheduler);
@@ -202,7 +202,7 @@ bool TestSchedulerStart(Scheduler& scheduler)
 }
 
 /// <summary>
-/// Тестирование функции CompleteTask
+/// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё CompleteTask
 /// </summary>
 /// <param name="scheduler"></param>
 /// <returns></returns>
@@ -216,21 +216,21 @@ bool TestScheduler_CompleteTask(Scheduler& scheduler)
 }
 
 /// <summary>
-/// Функция тестирования
+/// Р¤СѓРЅРєС†РёСЏ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ
 /// </summary>
 /// <returns></returns>
 void Test(Scheduler& scheduler)
 {
 	
 	
-	std::cout << "Тестирование функции CompleteTask" << std::endl;
+	std::cout << "РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё CompleteTask" << std::endl;
 	std::cout<<"error = "<< TestScheduler_CompleteTask(scheduler) << std::endl;
 
 
-	std::cout << "Тестирование функции Clear" << std::endl;
+	std::cout << "РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё Clear" << std::endl;
 	std::cout << "error = " << TestSchedulerClear(scheduler) << std::endl;
 
-	std::cout << "Тестирование функции Start" << std::endl;
+	std::cout << "РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ С„СѓРЅРєС†РёРё Start" << std::endl;
 	std::cout << "error = " << TestSchedulerStart(scheduler) << std::endl;
 };
 
@@ -239,7 +239,7 @@ int main() {
 	Scheduler scheduler;
 	Actions action = stop;
 	int n = action;
-	std::cout << "В каком режиме запустить программу? 7 - test 8 - application" << std::endl;
+	std::cout << "Р’ РєР°РєРѕРј СЂРµР¶РёРјРµ Р·Р°РїСѓСЃС‚РёС‚СЊ РїСЂРѕРіСЂР°РјРјСѓ? 7 - test 8 - application" << std::endl;
 	std::cin >> n;
 	switch (n)
 	{
